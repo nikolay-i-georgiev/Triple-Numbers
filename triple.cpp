@@ -37,3 +37,7 @@ Triple exp(const Triple &t){
 Triple log(const Triple &t){
     return Triple(std::log(t.a), t.b/t.a, t.c/t.a-t.b*t.b/(2*t.a*t.a));
 }
+
+Triple pow(const Triple &b, const Triple &e){
+    return(exp(e*log(b)));
+}
