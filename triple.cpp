@@ -1,22 +1,22 @@
 #include "triple.hpp"
 
-Triple Triple::operator+(const Triple& o) const{
-    return Triple(a+o.a, b+o.b, c+o.c);
+Triple operator+(const Triple& t1, const Triple& t2){
+    return Triple(t1.a+t2.a, t1.b+t2.b, t1.c+t2.c);
 }
 
-Triple Triple::operator*(const Triple&o) const{
-    return Triple(a*o.a, a*o.b+b*o.a, a*o.c+b*o.b+c*o.a);
+Triple operator-(const Triple& t1, const Triple& t2){
+    return Triple(t1.a-t2.a, t1.b-t2.b, t1.c-t2.c);
 }
 
-Triple Triple::operator-(const Triple& o) const{
-    return Triple(a-o.a, b-o.b, c-o.c);
+Triple operator*(const Triple& t1, const Triple& t2){
+    return Triple(t1.a*t2.a, t1.a*t2.b+t1.b*t2.a, t1.a*t2.c+t1.b*t2.b+t1.c*t2.a);
 }
 
-Triple Triple::operator/(const Triple& o) const{
-    return Triple(a/o.a, b/o.a-a*o.b/(o.a*o.a), c/o.a-b*o.b/(o.a*o.a)-a*o.c/(o.a*o.a)+a*o.b*o.b/(o.a*o.a*o.a));
+Triple operator/(const Triple& t1, const Triple& t2){
+    return Triple(t1.a/t2.a, t1.b/t2.a-t1.a*t2.b/(t2.a*t2.a), t1.c/t2.a-t1.b*t2.b/(t2.a*t2.a)-t1.a*t2.c/(t2.a*t2.a)+t1.a*t2.b*t2.b/(t2.a*t2.a*t2.a));
 }
 
-Triple pow(Triple t, int n){
+Triple pow(const Triple &t,const int &n){
     if(n<0)return Triple(1)/pow(t,-n);
     Triple ans=1;
     for(int i=0;i<n;i++){
