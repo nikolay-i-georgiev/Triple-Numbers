@@ -9,4 +9,4 @@ Triple operator+(const Triple& t1, const Triple& t2);
 Triple operator-(const Triple& t1, const Triple& t2);
 Triple operator*(const Triple& t1, const Triple& t2);
 Triple operator/(const Triple& t1, const Triple& t2);
-Triple pow(Triple &t, int &n);
+Triple intpow(Triple &t, int &n);
