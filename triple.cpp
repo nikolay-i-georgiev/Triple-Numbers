@@ -33,3 +33,7 @@ Triple exp(const Triple &t){
     double ea=std::exp(t.a);
     return Triple(ea, ea*t.b, ea*(t.b*t.b/2+t.c));
 }
+
+Triple log(const Triple &t){
+    return Triple(std::log(t.a), t.b/t.a, t.c/t.a-t.b*t.b/(2*t.a*t.a));
+}
