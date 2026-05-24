@@ -9,3 +9,5 @@ Triple operator-(const Triple& o) const;
 Triple operator*(const Triple& o) const;
 Triple operator/(const Triple& o) const;
 };
+
+Triple pow(Triple t, int n);
