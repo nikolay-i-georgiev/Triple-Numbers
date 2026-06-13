@@ -12,4 +12,5 @@ Triple operator/(const Triple& t1, const Triple& t2);
 Triple intpow(Triple &t, int &n);
 Triple exp(const Triple &t);
 Triple log(const Triple &t);
-Triple pow(const Triple &b, const Triple &e);
+Triple pow(const Triple &a, const Triple &b);
+Triple sin(const Triple &t);
