@@ -44,5 +44,10 @@ Triple pow(const Triple &a, const Triple &b){
 
 Triple sin(const Triple &t){
     double sina=std::sin(t.a), cosa=std::cos(t.a);
-    return Triple(sina, cosa*t.b, cosa*t.c-sina*t.b*t.b/2); // Derived from sin(a+b*eps+c*eps^2)=sin(a)*cos(b*eps+c*eps^2)+cos(a)*sin(b*eps+c*eps^2) and applying the Taylor series for sin(x)
+    return Triple(sina, cosa*t.b, cosa*t.c-sina*t.b*t.b/2); // Derived from sin(a+b*eps+c*eps^2)=sin(a)*cos(b*eps+c*eps^2)+cos(a)*sin(b*eps+c*eps^2) and applying the Taylor series for sin(x) and cos(x)
+}
+
+Triple cos(const Triple &t){
+    double sina=std::sin(t.a), cosa=std::cos(t.a);
+    return Triple(cosa, sina*t.b, -cosa*t.b*t.b/2-sina*t.c); // Derived from cos(a+b*eps+c*eps^2)=cos(a)cos(b*eps+c*eps^2)-sin(a)sin(b*eps+c*eps^2) and applying the Taylor series for sin(x) and cos(x)
 }

@@ -14,3 +14,4 @@ Triple exp(const Triple &t);
 Triple log(const Triple &t);
 Triple pow(const Triple &a, const Triple &b);
 Triple sin(const Triple &t);
+Triple cos(const Triple &t);
