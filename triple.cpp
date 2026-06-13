@@ -49,5 +49,5 @@ Triple sin(const Triple &t){
 
 Triple cos(const Triple &t){
     double sina=std::sin(t.a), cosa=std::cos(t.a);
-    return Triple(cosa, sina*t.b, -sina*t.c-cosa*t.b*t.b/2); // Derived from cos(a+b*eps+c*eps^2)=cos(a)cos(b*eps+c*eps^2)-sin(a)sin(b*eps+c*eps^2) and applying the Taylor series for sin(x) and cos(x)
+    return Triple(cosa, -sina*t.b, -sina*t.c-cosa*t.b*t.b/2); // Derived from cos(a+b*eps+c*eps^2)=cos(a)cos(b*eps+c*eps^2)-sin(a)sin(b*eps+c*eps^2) and applying the Taylor series for sin(x) and cos(x)
 }
